@@ -54,7 +54,12 @@
                         </div>
                     </div>
                     <div class="card">
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formsubmit.co/karim.mounir048@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nueva solicitud de presupuesto - Mendigital">
+                            <input type="hidden" name="_next" value="https://mendigital.es/contact.html?success=true">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+
                             <div class="grid grid-2" style="gap: 1rem;">
                                 <div class="form-group">
                                     <label for="nombre">Nombre</label>
@@ -156,10 +161,13 @@
                 });
             });
 
-            document.getElementById('contactForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.');
-            });
+            // Check for success parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('¡Gracias! Tu solicitud se ha enviado correctamente. Nos pondremos en contacto contigo pronto.');
+                // Clean URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         });
     </script>
 </body>

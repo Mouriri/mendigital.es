@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Mendigital</title>
+    <meta name="description" content="Contacta con Mendigital para digitalizar tu negocio. Presupuesto sin compromiso.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/main-BqoTV7Ej.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-H5Po8gNn.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="logo">Mendigital</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/about.html">Quiénes Somos</a></li>
+                    <li><a href="/services.html">Servicios</a></li>
+                    <li><a href="/contact.html" class="text-primary">Contacto</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="/contact.html" class="btn btn-primary">Pide Presupuesto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 60px;">
+            <div class="container">
+                <h1>Contacta con Nosotros</h1>
+                <p class="motto">Estamos listos para escuchar tu proyecto.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="grid grid-2">
+                    <div>
+                        <h2>Hablemos</h2>
+                        <p>Rellena el formulario y nos pondremos en contacto contigo lo antes posible para ofrecerte una
+                            solución a medida.</p>
+                        <div style="margin-top: 2rem;">
+                            <h3>Información de Contacto</h3>
+                            <p><strong>Email:</strong> info@mendigital.es</p>
+                            <p><strong>Teléfono:</strong> +34 698 607 846</p>
+                            <p><strong>Dirección:</strong> Navarra, España</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <form id="contactForm">
+                            <div class="grid grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" id="apellido" name="apellido" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" id="direccion" name="direccion">
+                            </div>
+
+                            <div class="form-group">
+                                <label>¿Eres autónomo o empresa?</label>
+                                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" name="tipo_cliente" value="autonomo" checked
+                                            style="width: auto;"> Autónomo
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" name="tipo_cliente" value="empresa" style="width: auto;">
+                                        Empresa
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="workersField" style="display: none;">
+                                <label for="trabajadores">Nº Trabajadores</label>
+                                <select id="trabajadores" name="trabajadores">
+                                    <option value="1-5">1-5</option>
+                                    <option value="5-10">5-10</option>
+                                    <option value="mas-10">Más de 10</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Mendigital</h3>
+                    <p>Digitalizamos tu crecimiento, impulsamos tu futuro.</p>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <p>Email: <a href="mailto:info@mendigital.es">info@mendigital.es</a></p>
+                    <p>Teléfono: +34 698 607 846</p>
+                    <p>Navarra, España</p>
+                </div>
+                <div>
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/about.html">Quiénes Somos</a></li>
+                        <li><a href="/services.html">Servicios</a></li>
+                        <li><a href="/legal.html">Aviso Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mendigital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radios = document.querySelectorAll('input[name="tipo_cliente"]');
+            const workersField = document.getElementById('workersField');
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (e.target.value === 'empresa') {
+                        workersField.style.display = 'block';
+                    } else {
+                        workersField.style.display = 'none';
+                    }
+                });
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.');
+            });
+        });
+    </script>
+</body>
+
+</html>
